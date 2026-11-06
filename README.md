@@ -40,7 +40,7 @@
                        |    Vite + Tailwind CSS + Lucide   |
                        +-----------------+-----------------+
                                          |
-                                (HTTP / Port 4000)
+                                (HTTP / Port 4001)
                                          |
                        +-----------------v-----------------+
                        |     Backend Engine (Express/TS)   |
@@ -119,7 +119,7 @@ cd Threat-Radar
 docker compose up -d --build
 
 # Open the platform in your browser
-# http://localhost:4000
+# http://localhost:4001
 ```
 
 ### Option B: Run Locally (Node.js v20+)
@@ -135,7 +135,7 @@ npm run build
 node backend/dist/server.js
 
 # Open in browser
-# http://localhost:4000
+# http://localhost:4001
 ```
 
 ### Development Mode (Hot Reload)

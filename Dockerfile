@@ -32,7 +32,7 @@ FROM node:22-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV PORT=4000
+ENV PORT=4001
 
 # Install curl for container health check
 RUN apk add --no-cache curl
@@ -46,11 +46,11 @@ COPY --from=backend-builder /app/backend/package.json ./backend/package.json
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 
 # Expose unified Cyber Ops Platform Port
-EXPOSE 4000
+EXPOSE 4001
 
 # Container Healthcheck
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
-  CMD curl -f http://localhost:4000/api/health || exit 1
+  CMD curl -f http://localhost:4001/api/health || exit 1
 
 WORKDIR /app/backend
 CMD ["node", "dist/server.js"]
